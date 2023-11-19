@@ -18,4 +18,6 @@ public interface ArtistService {
 	Page<List<ArtistEntity>> findByNameContainingIgnoreCase(String name, Pageable pageable) throws Exception;
 	
 	Optional<ArtistEntity> findById(UUID uuid) throws Exception;
+	
+	void deleteById(UUID uuid) throws Exception;
 }
