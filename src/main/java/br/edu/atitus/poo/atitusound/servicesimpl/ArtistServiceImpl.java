@@ -1,5 +1,11 @@
 package br.edu.atitus.poo.atitusound.servicesimpl;
 
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import br.edu.atitus.poo.atitusound.entities.ArtistEntity;
@@ -27,6 +33,21 @@ public class ArtistServiceImpl implements ArtistService{
 		validate(entity);
 		repository.save(entity);
 		return entity;
+	}
+
+	@Override
+	public List<ArtistEntity> findAll() throws Exception {
+		return repository.findAll();
+	}
+
+	@Override
+	public Page<List<ArtistEntity>> findByNameContainingIgnoreCase(String name, Pageable pageable) throws Exception {
+		return repository.findByNameContainingIgnoreCase(name, pageable);
+	}
+
+	@Override
+	public Optional<ArtistEntity> findById(UUID uuid) throws Exception {
+		return repository.findById(uuid);
 	}
 	
 }
