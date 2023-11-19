@@ -18,6 +18,8 @@ public class ArtistServiceImpl implements ArtistService{
 	protected void validate(ArtistEntity entity) throws Exception{
 		if (entity.getName() == null || entity.getName().isEmpty())
 			throw new Exception("Campo nome inválido!");
+		if (repository.existsByName(entity.getName()))
+			throw new Exception("Já existe registro com este nome!");
 	}
 
 	@Override

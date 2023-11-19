@@ -10,4 +10,6 @@ import br.edu.atitus.poo.atitusound.entities.ArtistEntity;
 @Repository
 public interface ArtistRepository extends JpaRepository<ArtistEntity, UUID>{
 
+	Boolean existsByName(String name);
+	
 }
