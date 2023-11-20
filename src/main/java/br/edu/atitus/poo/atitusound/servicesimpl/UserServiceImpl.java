@@ -1,7 +1,6 @@
 package br.edu.atitus.poo.atitusound.servicesimpl;
 
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -12,7 +11,7 @@ import br.edu.atitus.poo.atitusound.repositories.UserRepository;
 import br.edu.atitus.poo.atitusound.services.UserService;
 
 @Service
-public class UserServiceImpl implements UserService, UserDetailsService{
+public class UserServiceImpl implements UserService{
 
 	private final UserRepository repository;
 	private final PasswordEncoder passwordEncoder;
